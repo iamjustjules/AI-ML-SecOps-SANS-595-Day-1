@@ -1,0 +1,10 @@
+# Select specific columns with a condition (replace 'column' and 'value' with actual data)
+cursor.execute(f"SELECT column1, column2 FROM {table_name} WHERE column3 = 'value';")
+filtered_records = cursor.fetchall()
+print("Filtered records:", filtered_records)
+
+
+# Find documents with a filter and limit the number of results
+filtered_docs = collection.find({"field": "value"}, {"_id": 1, "other_field": 1}).limit(5)
+for doc in filtered_docs:
+    print(doc)
